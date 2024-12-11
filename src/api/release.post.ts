@@ -20,14 +20,16 @@ export default defineEventHandler(async (event) => {
 
   const filePromise = allFiles.map((item) => {
     const fileName = item.filename
+    // todo: reg to version and create folder
     const filePath = resolve(folder, fileName)
-    const wirteStream = createWriteStream(filePath)
+    // write stream
+    const writeStream = createWriteStream(filePath)
     let data = item.data as Buffer
 
     const readStream = new PassThrough().end(data)
 
     return new Promise((resolve, reject) => {
-      pipeline(readStream, wirteStream, (err) => {
+      pipeline(readStream, writeStream, (err) => {
         if (err) {
           reject(err)
           return
