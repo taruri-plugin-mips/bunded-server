@@ -4,10 +4,20 @@
     "build": "nitro build",
     "dev": "nitro dev",
     "prepare": "nitro prepare",
-    "preview": "node .output/server/index.mjs"
+    "preview": "node .output/server/index.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "nitropack": "latest"
   },
   "devDependencies": {
-    "nitropack": "latest",
+    "@antfu/eslint-config": "^3.11.2",
+    "@types/adm-zip": "^0.5.7",
+    "@types/fs-extra": "^11.0.4",
+    "adm-zip": "^0.5.16",
+    "eslint": "^9.16.0",
+    "fs-extra": "^11.2.0",
     "pathe": "^1.1.2"
   }
 }
