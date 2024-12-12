@@ -68,8 +68,7 @@ export default defineEventHandler(async (event) => {
         await remove(filePath)
 
         resolve({
-          url: `http://localhost:3000/uploads/${fileName}`,
-          type: item.type,
+          status: 'wait',
         })
       })
     })
