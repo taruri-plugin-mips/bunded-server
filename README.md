@@ -1,1 +1,1 @@
-# 线上打包的服务端
+move to https://github.com/taruri-plugin-mips/server
